@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VALENTINE</title>
+<style>
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.card-container {
+  background-color: transparent;
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card-container.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+}
+
+.front {
+  background-color: #be2528;
+   font-size: 45px;
+    color: white;
+}
+
+.back {
+  background-color: #ef0aa3;
+  transform: rotateY(180deg);
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 5px;
+  <!-- background-color: dodgerblue;  -->
+  padding: 5px;
+}
+
+.grid-container > div {
+  <!-- background-color: rgba(255, 255, 255, 0.8); -->
+  text-align: center;
+  font-size: 30px;
+}
+<!-- #myDIV { -->
+  <!-- height:12px; -->
+  <!-- background-color:#FFFFFF; -->
+  <!-- text-align: center; -->
+  <!-- font-size: 28px; -->
+  <!-- animation: dance 1s infinite; -->
+  <!-- text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); -->
+  <!-- letter-spacing: 0.05em; -->
+  <!-- font-weight: bold; -->
+  <!-- font-family: 'Roboto', sans-serif; -->
+  <!-- color:#be2528; -->
+<!-- } -->
+<!-- @keyframes dance { -->
+            <!-- 0%, 100% { -->
+                <!-- transform: translateY(0); -->
+            <!-- } -->
+            <!-- 20% { -->
+                <!-- transform: translateY(-10px); -->
+            <!-- } -->
+            <!-- 40% { -->
+                <!-- transform: translateY(10px); -->
+            <!-- } -->
+            <!-- 60% { -->
+                <!-- transform: translateY(-10px); -->
+            <!-- } -->
+            <!-- 80% { -->
+                <!-- transform: translateY(10px); -->
+            <!-- } -->
+<!-- } -->
+#ty {
+			padding-left:430px;
+			text-align:center;
+			height: 10vh;
+			display: flex;
+            font-size: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typewriter 2s steps(13) infinite alternate,
+                blink 800ms steps(13) infinite normal;
+            border-right: 5px solid red;
+			color:#be2528;
+			font-weight: bold;
+			font-style: oblique;
+			letter-spacing: 0.20em;
+        }
+
+        @keyframes typewriter {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 77%;
+            }
+        }
+
+        @keyframes blink {
+            from {
+                border-color: red;
+            }
+
+            to {
+                border-color: transparent;
+            }
+        }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height:65px;
+  background-color: #F894E7;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+#timer-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    <!-- box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); -->
+    font-family: Arial, sans-serif;
+}
+
+#timer {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#reset-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#reset-button:hover {
+    background-color: #0056b3;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+</style>
+
+</head>
+<body>
+<div id="overlay" onclick="off()">
+  <div id="text"></div>
+<div id="timer-container">
+        <span id="timer">10</span> seconds
+        <button id="reset-button">Reset</button>
+    </div>
+    <script src="timer.js"></script>
+</div>
+</div>
+</div>
+<div style="text-align:center;">
+<img src="png/hvd.jpg" alt="1" style="width:600px;height:450px;">
+</div>
+<div id="ty"><h1>Love &hearts; Notes Live!</h1></div>
+
+<br>
+<h3 style="font-size: 50px; text-align: center; color: blue;"></h3>
+
+<div class="grid-container">
+  <!-- 1 -->
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+  <div class="card">
+    <div class="front">
+      <h1>1</h1>
+	
+    </div>
+    <div class="back">
+	<a href="1.html"target="_blank">
+	<img src="png/1.png" alt="1" style="width:300px;height:300px;">
+</a>     
+    </div>
+  </div>
+  </div>
+   <!-- 2 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>2</h1>
+	
+    </div>
+    <div class="back">
+     <a href="2.html"target="_blank">
+	<img src="png/2.png" alt="1" style="width:300px;height:300px;">
+</a>     
+    </div>
+  </div>
+  </div>
+  
+   <!-- 3 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>3</h1>
+	
+    </div>
+    <div class="back">
+    <a href="3.html"target="_blank">
+	<img src="png/3.png" alt="1" style="width:300px;height:300px;">
+</a>     
+    </div>
+  </div>
+  </div>
+  
+   <!-- 4 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>4</h1>
+
+    </div>
+    <div class="back">
+     <a href="4.html"target="_blank">
+	<img src="png/4.png" alt="1" style="width:300px;height:300px;">
+</a>     
+    </div>
+  </div>
+  </div>
+  
+  <!-- 5 -->
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+  <div class="card">
+    <div class="front">
+      <h1>5</h1>
+	
+    </div>
+    <div class="back">
+      <a href="5.html"target="_blank">
+	<img src="png/5.png" alt="1" style="width:300px;height:300px;">
+</a>     
+    </div>
+  </div>
+  </div>
+   <!-- 6 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>6</h1>
+
+    </div>
+    <div class="back">
+     <a href="6.html"target="_blank">
+	<img src="png/6.png" alt="1" style="width:300px;height:300px;">
+</a>     
+    </div>
+  </div>
+  </div>
+  
+   <!-- 7 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>7</h1>
+	
+    </div>
+    <div class="back">
+     <a href="7.html"target="_blank">
+	<img src="png/7.png" alt="1" style="width:300px;height:300px;">
+</a>     
+    </div>
+  </div>
+  </div>
+  
+   <!-- 8 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>8</h1>
+	
+    </div>
+    <div class="back">
+      <a href="8.html"target="_blank">
+	<img src="png/8.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+   <!-- 9 -->
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+  <div class="card">
+    <div class="front">
+      <h1>9</h1>
+
+    </div>
+    <div class="back">
+     <a href="9.html"target="_blank">
+	<img src="png/9.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+   <!-- 10 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>10</h1>
+	
+    </div>
+    <div class="back">
+     <a href="10.html"target="_blank">
+	<img src="png/10.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+   <!-- 11 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>11</h1>
+	
+    </div>
+    <div class="back">
+    <a href="11.html"target="_blank">
+	<img src="png/11.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+   <!-- 12 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>12</h1>
+
+    </div>
+    <div class="back">
+     <a href="12.html"target="_blank">
+	<img src="png/12.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+  <!-- 13 -->
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+  <div class="card">
+    <div class="front">
+      <h1>13</h1>
+
+    </div>
+    <div class="back">
+     <a href="13.html"target="_blank">
+	<img src="png/13.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+   <!-- 14 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>14</h1>
+	
+    </div>
+    <div class="back">
+     <a href="14.html"target="_blank">
+	<img src="png/14.png" alt="1" style="width:300px;height:300px;">
+</a>       
+    </div>
+  </div>
+  </div>
+  
+   <!-- 15 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>15</h1>
+	
+    </div>
+    <div class="back">
+     <a href="15.html"target="_blank">
+	<img src="png/15.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+   <!-- 16 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>16</h1>
+
+    </div>
+    <div class="back">
+     <a href="16.html"target="_blank">
+	<img src="png/16.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+   <!-- 17 -->
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+  <div class="card">
+    <div class="front">
+      <h1>17</h1>
+
+    </div>
+    <div class="back">
+     <a href="17.html"target="_blank">
+	<img src="png/17.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+   <!-- 18 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>18</h1>
+	
+    </div>
+    <div class="back">
+    <a href="18.html"target="_blank">
+	<img src="png/18.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+   <!-- 19 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>19</h1>
+
+    </div>
+    <div class="back">
+     <a href="19.html"target="_blank">
+	<img src="png/19.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+   <!-- 20 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>20</h1>
+	
+    </div>
+    <div class="back">
+    <a href="20.html"target="_blank">
+	<img src="png/20.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+  <!-- 21 -->
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+  <div class="card">
+    <div class="front">
+      <h1>21</h1>
+	
+    </div>
+    <div class="back">
+     <a href="21.html"target="_blank">
+	<img src="png/21.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+   <!-- 22 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>22</h1>
+	
+    </div>
+    <div class="back">
+    <a href="22.html"target="_blank">
+	<img src="png/22.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+   <!-- 23 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>23</h1>
+	
+    </div>
+    <div class="back">
+    <a href="23.html"target="_blank">
+	<img src="png/23.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+  
+   <!-- 24 -->
+  <div class="card-container" onclick="this.classList.toggle('flipped')">
+  
+  <div class="card">
+    <div class="front">
+      <h1>24</h1>
+	
+    </div>
+    <div class="back">
+     <a href="24.html"target="_blank">
+	<img src="png/24.png" alt="1" style="width:300px;height:300px;">
+</a>      
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="footer">
+
+  <p>
+  Thank you https://www.w3schools.com/ | e. leyva [2025] 
+  </p>
+  <a href="https://youtu.be/zcmELJxjuMc" target="_blank">How Deep is Your Love</a> | <a href="https://youtu.be/hTEiK8d3PZ4" target="_blank">Palagi</a> |
+   <a href="https://www.youtube.com/watch?v=qrj2oY1LPMI" target="_blank">Heaven Knows</a>
+</div>
+
+</body>
+</html>
